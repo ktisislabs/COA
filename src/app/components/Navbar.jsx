@@ -13,7 +13,7 @@ function Navbar() {
        
     </span>
 
-    <ul className='Nav-items flex items-center gap-5 text-black'>
+    <ul className='Nav-items flex items-center gap-7 text-black'>
     <li className='font-medium font-sans cursor-pointer hover:text-gray-500'>ABOUT US</li>
     <li className='font-medium font-sans cursor-pointer hover:text-gray-500'>SERVICES </li>
     <li className='font-medium font-sans cursor-pointer hover:text-gray-500'>CONTACT US</li>
