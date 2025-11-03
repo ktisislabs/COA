@@ -23,7 +23,7 @@ const roboto=localfont({
 })
 
 export const metadata = {
-  title: "Chambers of Aniruddha",
+  title: "TITI",
   description: "Law Chamber of Aniruddha",
 };
 

@@ -17,7 +17,7 @@ function Page() {
   }, []);
 
   return (
-    <div className="Loader-Page w-screen h-screen bg-[#EFF3EA] flex items-center justify-center">
+    <div className="Loader-Page w-screen h-screen bg-[#0b0b0b] flex items-center justify-center">
       <div className="flex flex-col items-center w-full px-4">
       
         <p className="text-black text-xl flex items-center sm:text-2xl md:text-xl font-roboto font-semibold text-center">
