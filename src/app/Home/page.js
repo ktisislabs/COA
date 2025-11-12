@@ -5,8 +5,13 @@ import Navbar from '../components/Navbar'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { MapPin, PhoneCall, Car, CheckCircle2 } from "lucide-react";
+import Footer from '../components/Footer'
+import { useRouter } from 'next/navigation'
 
 function Page() {
+
+const router = useRouter() 
+
   return (
     <>
       <div className="home-page w-screen min-h-screen relative z-10 bg-white overflow-x-hidden">
@@ -80,35 +85,42 @@ function Page() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="Section-2 w-screen min-h-[70vh] flex flex-col items-center justify-center bg-white px-6 md:px-16 text-center py-16"
+          className="Section-2 relative w-screen min-h-[80vh] flex flex-col items-center justify-center 
+             bg-gradient-to-br from-white via-orange-50 to-blue-50 px-6 md:px-16 text-center py-24 overflow-hidden"
         >
+          {/* Decorative floating gradient glows */}
+          <div className="absolute top-0 left-0 w-72 h-72 bg-orange-200/40 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl animate-pulse"></div>
+
           <motion.h2
-            className="text-4xl font-bold text-black font-sans mb-4"
+            className="text-4xl md:text-5xl font-bold text-gray-900 font-sans mb-6 drop-shadow-sm"
             initial={{ scale: 0.9 }}
             whileInView={{ scale: 1 }}
             transition={{ type: 'spring', stiffness: 100 }}
           >
-            Why choose  <span className="text-red-600">TITI?</span>
+            Why Choose <span className="text-red-500">TITI?</span>
           </motion.h2>
 
-          <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-3xl mb-12">
-            TITI simplifies your travel journey into three quick steps — effortless, secure, and seamless from start to finish.
+          <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-3xl mb-16">
+            TITI transforms your daily travel into an elevated experience — simple, safe, and delightfully smooth from start to finish.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl z-10">
             {/* Step 1 */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col items-center text-center bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-all"
+              whileHover={{ scale: 1.05, y: -8 }}
+              className="flex flex-col items-center text-center bg-white/30 backdrop-blur-lg border border-white/40
+                 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
             >
-              <div className="bg-red-400 p-4 rounded-full mb-4">
-                <PhoneCall size={32} className="text-white" />
+              <div className="bg-gradient-to-tr from-red-400 to-orange-400 p-4 rounded-full mb-4 shadow-md">
+                <PhoneCall size={36} className="text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">1. Book Instantly</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Book Instantly</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Choose your destination and tap to book. TITI finds the nearest verified driver in seconds.
+                Choose your destination and tap to book — TITI connects you to the nearest verified driver within seconds.
               </p>
             </motion.div>
 
@@ -117,14 +129,16 @@ function Page() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col items-center text-center bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-all"
+              whileHover={{ scale: 1.05, y: -8 }}
+              className="flex flex-col items-center text-center bg-white/30 backdrop-blur-lg border border-white/40
+                 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
             >
-              <div className="bg-red-400 p-4 rounded-full mb-4">
-                <Car size={32} className="text-white" />
+              <div className="bg-gradient-to-tr from-orange-400 to-yellow-400 p-4 rounded-full mb-4 shadow-md">
+                <Car size={36} className="text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">2. Ride Comfortably</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Ride Comfortably</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Enjoy smooth rides with professional drivers, real-time tracking, and comfort-first vehicles.
+                Experience professional drivers, premium comfort, and real-time tracking — wherever your journey takes you.
               </p>
             </motion.div>
 
@@ -133,14 +147,16 @@ function Page() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col items-center text-center bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-all"
+              whileHover={{ scale: 1.05, y: -8 }}
+              className="flex flex-col items-center text-center bg-white/30 backdrop-blur-lg border border-white/40
+                 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
             >
-              <div className="bg-red-400 p-4 rounded-full mb-4">
-                <CheckCircle2 size={32} className="text-white" />
+              <div className="bg-gradient-to-tr from-blue-400 to-indigo-400 p-4 rounded-full mb-4 shadow-md">
+                <CheckCircle2 size={36} className="text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">3. Arrive & Relax</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Arrive & Relax</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Reach your destination safely and on time — every single time, with complete transparency.
+                Get to your destination safely, on time, and stress-free — with full transparency at every step.
               </p>
             </motion.div>
           </div>
@@ -152,38 +168,121 @@ function Page() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
           viewport={{ once: true }}
-          className="SEction-3 w-screen min-h-[70vh] bg-[#EFF3EA] flex flex-col md:flex-row items-center justify-center gap-12 px-6 md:px-16"
+          className="Section-3 w-screen min-h-[80vh] flex flex-col md:flex-row items-center justify-center gap-12 px-6 md:px-16 
+          bg-gradient-to-br from-black via-black to-black relative overflow-hidden"
         >
-          {/* Text on Left */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,0,100,0.2),transparent_60%)] blur-2xl opacity-50 pointer-events-none"></div>
+
           <motion.div
             initial={{ x: -80, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="flex-1 text-left"
+            className="flex-1 text-left z-10"
           >
-            <h2 className="text-5xl font-bold mb-6 text-gray-800">Experience the Future</h2>
-            <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed max-w-lg">
-              At TITI, we’re redefining how people move. Our technology-driven rides ensure comfort, safety, and a touch of luxury — all at your fingertips.
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+              Experience the <span className="text-red-500">Future</span> of Rides
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed max-w-lg">
+              At <span className="font-semibold text-white">TITI</span>, we’re redefining how people move.  
+              Powered by innovation, designed for comfort every ride is secure, smart, and effortless.
             </p>
+
+            <motion.button
+              whileHover={{ scale: 1.08, y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              transition={{ type: "spring", stiffness: 250, damping: 15 }}
+              className="mt-10 px-6 py-3 flex items-center gap-2 bg-white/10 text-white font-medium text-sm rounded-xl shadow-lg backdrop-blur-md border border-white/20 hover:bg-white/20 hover:shadow-2xl transition-all"
+              onClick={()=>router.push("/TITI-Services")}
+            >
+              Learn More
+            </motion.button>
           </motion.div>
 
-          {/* Car Image Right */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.3, duration: 1, ease: 'easeOut' }}
-            className="flex-1 flex justify-center items-center"
+            className="flex-1 flex justify-center items-center z-10"
           >
-            <div className="relative w-80 h-80 md:w-[420px] md:h-[420px]">
+            <div className="relative w-72 h-72 md:w-[650px] md:h-[650px]">
               <Image
-                src="/car.png"
+                src="/rider.png"
                 alt="TITI car"
                 fill
-                className="object-contain drop-shadow-2xl"
+                className="object-contain drop-shadow-[0_0_40px_rgba(255,155,0,0.6)]"
               />
             </div>
           </motion.div>
         </motion.section>
+
+        {/* ---------------- SECTION 4 (COMING SOON DOWNLOAD SECTION) ---------------- */}
+        <motion.section
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="w-screen min-h-[70vh] flex flex-col items-center justify-center text-white text-center px-6 md:px-16 py-24 relative overflow-hidden"
+        >
+          {/* Background Image with Next.js Image */}
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src="/bagh_bg.jpg"
+              alt="Background"
+              fill
+              priority
+              className="object-cover object-center"
+            />
+          </div>
+
+          {/* Dark overlay for better contrast */}
+          <div className="absolute inset-0 bg-black/30 -z-0"></div>
+
+          {/* Content */}
+          <motion.h2
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
+            className="text-4xl md:text-5xl font-bold mb-4 z-10"
+          >
+            Ready to Get Started?
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl z-10"
+          >
+            Download <span className="font-semibold text-white">TITI</span> soon and enjoy your first ride! 
+          </motion.p>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap justify-center gap-6 z-10">
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-3 bg-white text-black px-8 py-3 rounded-full shadow-md 
+                 hover:shadow-xl transition-all font-medium"
+            >
+              <Image src="/apple-logo.png" alt="App Store" width={24} height={24} />
+              <span className="font-bold">Coming Soon</span>
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-3 bg-white text-black px-8 py-3 rounded-full shadow-md 
+                 hover:shadow-xl transition-all font-medium"
+            >
+              <Image src="/google-logo.png" alt="Google Play" width={24} height={24} />
+              <span className="font-bold">Coming Soon</span>
+            </motion.button>
+          </div>
+        </motion.section>
+
+        {/* ---------------- FOOTER ---------------- */}
+        <Footer/>
+
       </div>
     </>
   )
